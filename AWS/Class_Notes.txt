@@ -972,5 +972,34 @@ CloudFormation :::
 	- IAM Role
 	
 
+
+#######################
+Day 12: 18th Dec. 2025
+#######################		
+
+
+	-> Route-53 
 	
+	-> AWS Monitoring 
+	
+		==> Dynatrace/Prometheus/Grafana ==> 
+	
+		==> Architecture of Monitor Tool/Service :
+		
+			- Client Server Architecture
+			- Agent based Architecture
+	
+	-> Serverless Tech - Lambda Service 
+	
+	-> Database Service - SNS/SQS
+	
+	-> Load Balancer - Demo
+	
+	-> Projects -> 
+	
+
+Next ::: Azure Cloud - AZ104
+
+Next ::: DevOps using Open-Source Tools 
+
 			

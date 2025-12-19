@@ -841,6 +841,136 @@ Day 10: 16th Dec. 2025
 	
 	
 		
+
+#######################
+Day 11: 18th Dec. 2025
+#######################		
 	
+	--> AWS Access points 
+	
+	--> Methods to interact with AWS Services ::::
+	
+		- AWS Console 			# Static / Manual
+		
+		- AWS Cli 		# An Utility to interact with AWS Services 
+	
+					To perform Dynamic Configuration :::
+					
+		- IAC Tools 	# Cloudformation / Terraform
+		
+		- AWS SDK 		# boto3 SDK Libraries ==> Pythons
+		
+		
+		Test Environment:
+		
+			- QA 	==> Quality Assurance Testing 
+						--> Test Team
+						--> Based on the test envi.
+						--> With some test data.
+						
+			- UAT   ==> User Acceptance Testing
+						--> Business Users 
+						--> Based on the real-time data.
+		
+		
+			Telecomm. domain :		
+				
+				SP1 --> New Service.
+				
+						-> Outlets 	--> UAT 
+						-> 
+						
+					 -> Released to LIVE Website
+					
+	
+	--> Demo on Load Balancer:
+	
+	
+	
+	-> AWS Cli :::
+	
+		https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html
+	
+		https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+		
+		https://docs.aws.amazon.com/cli/latest/userguide/cli_code_examples.html
+	
+		- Install AWS CLi on the Local Machine / EC2 Instance :::
+		
+		-> Dev Environment:	Infra-Structure Management Team 
+		
+			To Develop the Script
+				
+			Install AWS CLi on the EC2 Instance
+			
+		-> Use case :
+
+			Use AWS CLI Commands to interact with AWS Services 
+			
+				- Launch EC2 Instance 
+				
+				- Install AWS Cli 
+				
+				- Create s3 Bucket / Copy files to existing S3 Bucket 
+				
+			Pre-Requisites :::
+			
+				- To use AWS CLI Create s3 Bucket / Copy files to existing S3 Bucket 
+				
+				- IAM Role with permission		*** Most receommended way to enable access.
+	
+				- Create Access Key and Secret Key 
+						
+						Aasdfasdf3
+						
+						dasdfasdfsdf5
+						
+						AWS Region : ap-south-1
+				
+				- To Configure AWS Cli 
+				
+				
+				Login to EC2 Instance
+
+					- apt install curl unzip
+					
+					
+					
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+CloudFormation ::::
+
+
+	-> 	Dev (Static)			-->		Build(Dynamic)	-->		Test(Dynamic)		-->			Prod Environment - 24/7
+		
+		*ml-test.py_v1.1 		-->		ml-test.py_v1.1 --> 	ml-test.py_v1.1  	--> 		ml-test.py_v1.1
+																 - test fail
+		
+	
+	GItOps ==> Using IAC Tools & Script provision the entire infrastructure.
+	
+	AWS :
+	
+CloudFormation ::::
+	
+	Using IAC Tools & Script(CFT/TF) provision the entire infrastructure.
+	
+	
+	Infra-Structure Management ::
+		
+		Test Server:
+		
+		- Resource Provisioning		---> 	Resource Configuration Management
+			Terraform to create 				Ansible 
+			
+			
+			
+CloudFormation :::
+
+	- IAM Role
+	
+
 	
 			

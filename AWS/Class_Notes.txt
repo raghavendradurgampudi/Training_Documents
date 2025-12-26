@@ -1058,4 +1058,118 @@ Application Architecture :
 Infra Architecture :
 	- PAAS / IAAS / SAAS
 
+
+#######################
+Day 14: 26th Dec. 2025
+#######################	
+
+	Phase 1 : Create AWS Infra-Structure with RDS
+	
+	Pre-Requisites ::::
+	
+		1. Detailed Architecture Diagram :::
+		
+			=> Create the Workflow :
+				- Dependencies and the implementation process.
 			
+		2. Resource Provisioning :::
+		
+			=> Identify the upstream & downstream dependencies 
+			
+			=> Sequence of resource provisioning & Configuration
+			
+
+Service			
+			
+IAM	::
+		- Create IAM User ==> attach AdministrationAccess Policy
+		- IAM Roles :
+			-> EC2 =>  RDS 
+			-> Lambda =>
+		- VPC 		=> Mumbai 		==> IGW 
+			- cidr 
+			
+		- Subnets - cidr  				
+			Web Servers:				
+				- Public Subnet1	
+				- Public Subnet2
+			Database Servers:
+				- Private Subnet1	
+				- Private Subnet2	
+
+		- Create Internet Gateway ==> Internet facing ==> with valid Tag to reg in ALB
+		
+		- Configure Route Table 
+				-> 1. Public Internet facing 	==> Main Route Table -> IGW - 
+				-> 2. Local 
+		- Route Table Association 
+				-> Public Subnets - Association -> Main Route Table(IGW,VPC-CIDR) 
+				-> Private Subnets - Association -> Local/Private Route Table(VPC-CIDR) 
+				
+				
+		- Security Group :::
+		
+			1. EC2 Instance ==> 5000,http,22,https 	==> Public Subnet 		# Without Load balancer
+							==> Loadbalancer_Security_Grp_Name				# With Load balancer
+			
+			2. RDS Instance ==> MYSQL - 3306 port ==> VPC Level cidr 
+			
+			3. Load Balancers => http,22,https,IGW		==> Loadbalancer public DNS 
+								 ==> EC2 Instance
+								 
+		
+	
+	Services to be created ::: Checklist :::
+	
+		1. IAM Users, Policies, Roles(EC2, Lambda)
+					PLAWS2612-EC2_Role1 ==> To be referred in EC2 Instance 
+					PLAWS2612-Lambda_Role1 ==> Tobe referred in Lambda
+		
+		2. VPC-cidr(Enterprise_Level)
+		   Subnet-cidr(vpc) ==> (2 Public, 2 Private)
+		   IGW,Route_Tables
+		   Route_Table Associations
+		   Security Groups
+		   
+			1 VPC 		
+				PLAWS2612-VPC			vpc-06a9e026753e5b218 / PLAWS2612-VPC
+				
+				Internet-Gateway		PLAWS2612-IGW
+				
+				Main_Route Table : rtb-04f4665feb7ce7415
+				
+				2 Public_Subnets 		
+						- PLAWS2612-VPC-Public-SN1
+						- PLAWS2612-VPC-Public-SN2
+				
+				2 Private_Subnets
+						- PLAWS2612-VPC-Private-SN1
+						- PLAWS2612-VPC-Private-SN2
+				
+				
+				Route TAble ::
+				
+					- PLAWS2612-VPC-Private-RT1
+	
+Next :::
+
+	
+		3. EC2 Resources 
+			- Web Server ==> Templates!		
+		
+		4. Target Groups 
+			- List of Web Server Instances 
+			
+		5. RDS 
+			- Create RDS Instance using private subnet 
+			- Free Tier 
+			
+		6. SQS,S3 
+		
+		7. Lambda 
+		
+		8. SNS 
+		
+		9. Cloud Watch 
+		
+		10. ALB			
